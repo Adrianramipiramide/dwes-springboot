@@ -18,7 +18,7 @@ public class Controlador {
 
     @RequestMapping("/formulario")
     String form(){
-        return "/formulario";
+        return "formulario";
     }
 
     @PostMapping("/mostrarCoches")

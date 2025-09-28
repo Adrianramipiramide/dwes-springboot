@@ -6,8 +6,20 @@
     <title>Muestra Coches</title>
 </head>
 <body>
-<p th:text="${coche.matricula}"/>
-<p th:text="${coche.marca}"/>
+<div th:insert="fragments/nav.html"> </div>
+<table >
+    <tr>
+    <th>Matrícula</th>
+    <th>Marca</th>
+    <th>Kilómetros</th>
+    </tr>
+    <tr th:each="coche : ${coches}">
+        <td th:text="${coche.matricula}"></td>
+        <td th:text="${coche.marca}"></td>
+        <td th:text="${coche.km}"></td>
+    </tr>
 
+</table>
 </body>
+
 </html>

@@ -6,25 +6,35 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+
+import java.util.ArrayList;
 
 @Controller
 public class Controlador {
 
+    public ArrayList<Coche> listaCoches = new ArrayList<>();
+
     @GetMapping("/index")
-    String inicio(){
+    String inicio() {
         return "index";
     }
 
     @RequestMapping("/formulario")
-    String form(){
+    String form() {
         return "formulario";
     }
 
-    @PostMapping("/mostrarCoches")
-    String mostrarCoches(Coche coche, Model model){
-        System.out.println(coche);
-        model.addAttribute("coche",coche);
+    @PostMapping("/crearCoche")
+    String crearCoche(Coche coche, Model model) {
+        listaCoches.add(coche);
+        model.addAttribute("coches", listaCoches);
+        return "mostrarCoches";
+    }
+
+    @GetMapping("/mostrarCoches")
+    String mostrarCoches(Model model){
+        model.addAttribute("coches", listaCoches);
         return "mostrarCoches";
     }
 }

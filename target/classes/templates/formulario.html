@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Form</title>
 </head>
 <body>
-<form action = "/mostrarCoches" method = "post">
+
+<div th:insert="fragments/nav.html"> </div>
+<form action = "/crearCoche" method = "post">
     <input type="text" name="matricula" placeholder="matricula">
     <input type="text" name="marca" placeholder="marca">
     <input type="text" name="km" placeholder="km">

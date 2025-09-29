@@ -5,7 +5,7 @@ public class Coche {
     public String marca;
     public int km;
 
-    public Coche(){}
+
 
     public Coche(String matricula, String marca, int km) {
         this.matricula = matricula;

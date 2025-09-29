@@ -28,6 +28,7 @@ public class Controlador {
     @PostMapping("/crearCoche")
     String crearCoche(Coche coche, Model model) {
         listaCoches.add(coche);
+        System.out.println(coche);
         model.addAttribute("coches", listaCoches);
         return "mostrarCoches";
     }

@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<div th:insert="fragments/nav.html"> </div>
+
+<div th:replace="fragments/nav.html"> </div>
 <form action = "/crearCoche" method = "post">
     <input type="text" name="matricula" placeholder="matricula">
     <input type="text" name="marca" placeholder="marca">
